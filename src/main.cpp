@@ -160,8 +160,8 @@ int main(int argc, char** argv)
         waterState.emplace_back(std::make_pair<std::string, uint64_t>("water3", 1000000000));
 
         std::vector<std::pair<std::string, uint64_t>> eagleState;
-        eagleState.emplace_back(std::make_pair<std::string, uint64_t>("eagle", 1000000000));
-        eagleState.emplace_back(std::make_pair<std::string, uint64_t>("deadEagle", 1000000000));
+        eagleState.emplace_back(std::make_pair<std::string, uint64_t>("eagle", 10000000));
+        eagleState.emplace_back(std::make_pair<std::string, uint64_t>("deadEagle", 10000000));
 
         pAnimatedSprite->insertState("waterState", std::move(waterState));
         pAnimatedSprite->insertState("eagleState", std::move(eagleState));
