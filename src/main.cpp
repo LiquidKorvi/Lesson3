@@ -109,6 +109,111 @@ int main(int argc, char** argv)
         }
 
         auto tex = resourceManager.loadTexture("DefaultTexture", "res/textures/map_16x16.png");
+        //auto VerdanaTex = resourceManager.loadTexture("VerdanaTexture", "res/textures/Verdana.png");
+        
+        
+        std::vector<std::string> subVerdanaTexturesNames = {
+            "!","!","!","!","!","!","!","!",
+            "!","!","!","!","!","!","!","!",
+            "!","!","!","!","!","!","!","!",
+            "!","!","!","!","!","!","!","!",
+
+            " ",
+            "!",
+            "\"",
+            "#",
+            "$",
+                "%",
+                "&",
+                "'",
+                "(",
+                ")",
+                "*",
+                "+",
+                ",",
+                "-",
+                ".",
+                "/",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                ":",
+                ";",
+                "<",
+                "=",
+                ">",
+                "?",
+                "@",
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T",
+                "U",
+                "V",
+                "W",
+                "X",
+                "Y",
+                "Z",
+                "[",
+                "\\",
+                "]",
+                "^",
+                "_",
+                "`",
+                "a",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g",
+                "h",
+                "i",
+                "j",
+                "k",
+                "l",
+                "m",
+                "n",
+                "o",
+                "p",
+                "q",
+                "r",
+                "s",
+                "t",
+                "u",
+                "v",
+                "w",
+                "x",
+                "y",
+                "z",
+                "{",
+                "|",
+                "}",
+                "~"
+        };
 
         std::vector<std::string> subTexturesNames = {
             "block",
@@ -148,9 +253,13 @@ int main(int argc, char** argv)
         };
 
         auto pTextureAtlas = resourceManager.loatTextureAtlas("DefaultTextureAtlas", "res/textures/map_16x16.png", std::move(subTexturesNames), 16, 16);
+        auto pVerdanaTextureAtlas = resourceManager.loatTextureAtlas("VerdanaTextureAtlas", "res/textures/Verdana.png", std::move(subVerdanaTexturesNames), 32, 32);
 
         auto pSprite = resourceManager.loadSprite("NewSprite", "DefaultTextureAtlas", "SpriteShader", 100, 100, "beton");
         pSprite->setPosition(glm::vec2(300, 100));
+
+        auto tst = resourceManager.loadSprite("tstSprite", "VerdanaTextureAtlas", "SpriteShader", 100, 100, "f");
+        tst->setPosition(glm::vec2(400, 400));
 
         auto pAnimatedSprite = resourceManager.loadAnimatedSprite("NewAnimatedSprite", "DefaultTextureAtlas", "SpriteShader", 100, 100, "beton");
         pAnimatedSprite->setPosition(glm::vec2(300, 300));
@@ -250,6 +359,7 @@ int main(int argc, char** argv)
             glDrawArrays(GL_TRIANGLES, 0, 3);
 
             pSprite->render();
+            tst->render();
 
             pAnimatedSprite->render();
 

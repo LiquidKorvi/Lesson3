@@ -20,7 +20,7 @@ namespace Renderer {
     void AnimatedSprite::insertState(std::string state, std::vector<std::pair<std::string, uint64_t>> subTexturesDuration)
     {
         m_statesMap.emplace(std::move(state), std::move(subTexturesDuration));
-        m_statesMap.emplace()
+        
     }
 
     void AnimatedSprite::setState(const std::string& newState)
